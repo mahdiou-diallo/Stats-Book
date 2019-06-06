@@ -74,6 +74,8 @@ def bihistogram_plot(x1: np.ndarray, x2: np.ndarray) -> None:
         - Kolgomorov-Smirnov test (shift in distribution)
         also
         - quantile-quantile plot (shift in location and distribution)
+
+        reference: [NIST Engineering Stats Handbook](https://www.itl.nist.gov/div898/handbook/eda/section3/eda332.htm)
     """
     _, bins, _ = plt.hist(x1, bins=50, density=True, label='x1')
     _ = plt.hist(x2, bins=bins, alpha=0.5, density=True, label='x2')
@@ -87,5 +89,5 @@ if __name__ == '__main__':
     # X = np.arange(50)
     X = np.sin(np.linspace(0, 4*np.pi, 50))
 
-    
+
     autocorrelation_plot(X)
